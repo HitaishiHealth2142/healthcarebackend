@@ -3,9 +3,8 @@ const fs = require('fs');
 const path = require('path'); 
 
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+
+require('dotenv').config();
 
 
 const DB_HOST = process.env.DB_HOST;
