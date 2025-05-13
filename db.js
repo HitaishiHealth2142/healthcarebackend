@@ -8,7 +8,7 @@ require('dotenv').config();
 
 
 const DB_HOST = process.env.DB_HOST;
-const DB_PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : (process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 3306); // Use Render's PORT or DB_PORT, default 3306
+const DB_PORT = process.env.DB_PORT ? parseInt(process.env.PORT, 10) : (process.env.DB_PORT ? parseInt(process.env.DB_PORT, 10) : 3306); // Use Render's PORT or DB_PORT, default 3306
 const DB_USER = process.env.DB_USER;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_NAME = process.env.DB_NAME;
@@ -50,7 +50,9 @@ const poolConfig = {
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
-  ssl: sslConfig
+  ssl: sslConfig,
+  connectTimeout: 20000,
+  acquireTimeout: 20000
 };
 
 
